@@ -13,7 +13,7 @@
                 },
                 {
                     "name": "WH_SECRET",
-                    "secret": "TWH_SECRET"
+                    "secret": "WH_SECRET"
                 },
                 {
                     "name": "DISC_WH",
