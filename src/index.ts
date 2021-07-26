@@ -13,8 +13,8 @@ const DISC_WH = process.env.DISC_WH;
 
 if (!WH_SECRET || !PORT || !DISC_WH) process.exit();
 
-const app = express()
-const webhook = new Topgg.Webhook(WH_SECRET)
+const app = express();
+const webhook = new Topgg.Webhook(WH_SECRET);
 
 app.post("/dblwebhook", webhook.listener(async (vote) => {
     console.log(vote.bot, vote.user)

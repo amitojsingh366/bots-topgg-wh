@@ -4,35 +4,38 @@ import { User } from "./types/user";
 
 export async function sendMessage(bot: User, user: User, vote: WebhookPayload) {
     const payload = {
-        content: '',
-        embeds: [
+        "content": "",
+        "embeds": [
             {
-                title: 'New Vote',
-                color: 1376000,
-                fields: [
+                "title": 'New Vote',
+                "color": 1376000,
+                "thumbnail": {
+                    "url": user.avatar
+                },
+                "fields": [
                     {
-                        name: 'User',
-                        value: `<@${user.id}>(${user.tag})`
+                        "name": 'User',
+                        "value": `<@${user.id}>(${user.tag})`
                     },
                     {
-                        name: 'Type',
-                        value: vote.type
+                        "name": 'Type',
+                        "value": vote.type
                     },
                     {
-                        name: 'Weekend Multiplier',
-                        value: vote.isWeekend
+                        "name": 'Weekend Multiplier',
+                        "value": vote.isWeekend
                     },
                     {
-                        name: 'Time',
-                        value: Date.now().toLocaleString()
+                        "name": 'Time',
+                        "value": new Date().toLocaleString()
                     }
                 ]
             }
         ],
-        username: bot.username,
-        avatar_url: bot.avatar,
-        timestamp: new Date().toISOString()
+        "username": bot.username,
+        "avatar_url": bot.avatar,
+        "timestamp": new Date().toISOString()
     }
 
-    axios.post(process.env.DISC_WH || "", JSON.stringify(payload));
+    axios.post(process.env.DISC_WH || "", payload);
 }
