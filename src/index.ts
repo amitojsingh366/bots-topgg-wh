@@ -17,6 +17,7 @@ const app = express()
 const webhook = new Topgg.Webhook(WH_SECRET)
 
 app.post("/dblwebhook", webhook.listener(async (vote) => {
+    console.log(vote.bot, vote.user)
     const bot = await getUser(vote.bot || "");
     const user = await getUser(vote.user);
 
@@ -24,7 +25,3 @@ app.post("/dblwebhook", webhook.listener(async (vote) => {
 }))
 
 app.listen(PORT, () => console.log(`wh running on: http://localhost:${PORT}/dblwebhook`))
-
-
-
-
