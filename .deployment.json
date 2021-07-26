@@ -21,7 +21,7 @@
                 },
                 {
                     "name": "BOT_TOKEN",
-                    "value": "BOT_TOKEN"
+                    "secret": "BOT_TOKEN"
                 }
             ]
         }
