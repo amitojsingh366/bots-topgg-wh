@@ -16,10 +16,14 @@ export async function sendMessage(bot: User, user: User, vote: WebhookPayload) {
                     },
                     {
                         name: 'Type',
-                        value: `${vote.type}`
+                        value: vote.type
                     },
                     {
                         name: 'Weekend Multiplier',
+                        value: vote.isWeekend
+                    },
+                    {
+                        name: 'Time',
                         value: Date.now().toLocaleString()
                     }
                 ]
