@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Run Deployment Script
-        uses: duxcore/deploy@latest
+        uses: duxcore/deploy@v1.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           deployment-url: ${{ secrets.DEPLOY_URL }}
