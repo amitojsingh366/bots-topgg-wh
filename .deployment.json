@@ -1,29 +1,29 @@
 {
-    "env": {
-        "name": "bots-topgg-wh",
-        "branch": "main"
-    },
-    "containers": [
+  "env": {
+    "name": "bots-topgg-wh",
+    "branch": "main"
+  },
+  "containers": [
+    {
+      "dir": "/",
+      "envVars": [
         {
-            "dir": "/",
-            "envVars": [
-                {
-                    "name": "PORT",
-                    "secret": "PORT"
-                },
-                {
-                    "name": "WH_SECRET",
-                    "secret": "WH_SECRET"
-                },
-                {
-                    "name": "DISC_WH",
-                    "secret": "DISC_WH"
-                },
-                {
-                    "name": "BOT_TOKEN",
-                    "value": "BOT_TOKEN"
-                }
-            ]
+          "name": "PORT",
+          "secret": "PORT"
+        },
+        {
+          "name": "WH_SECRET",
+          "secret": "WH_SECRET"
+        },
+        {
+          "name": "DISC_WH",
+          "secret": "DISC_WH"
+        },
+        {
+          "name": "BOT_TOKEN",
+          "value": "BOT_TOKEN"
         }
-    ]
+      ]
+    }
+  ]
 }
